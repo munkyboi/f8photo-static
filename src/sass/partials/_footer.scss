@@ -1,0 +1,98 @@
+.footer {
+    background-color: $darkgray;
+    color: $white;
+
+    padding: 3rem 0 1rem 0;
+
+    [class^='col-'] {
+        h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 2rem;
+            color: $gray;
+            span {
+                display: block;
+            }
+        }
+
+        .email-link {
+            color: $gray;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    // .footer-end
+    &-end {
+        border-top: 1px solid rgba($white, 0.1);
+        padding-top: 1rem;
+        margin: 0;
+
+        @include flex(flex-start, center);
+
+        [class^='col-'] {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 2rem;
+
+        @media #{$responsive-phone} {
+            max-width: 100%;
+        }
+
+        input {
+            border-top-left-radius: 3rem;
+            border-bottom-left-radius: 3rem;
+        }
+
+        button {
+            border-top-right-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+        }
+    }
+
+    .copyright {
+        @media #{$responsive-phone} {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .payment-icons {
+        width: 100%;
+        text-align: right;
+        @media #{$responsive-phone} {
+            text-align: center;
+        }
+
+        img {
+            margin: 0;
+            width: 100%;
+            max-width: 40px;
+            height: auto;
+
+            &:not(:first-of-type) {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

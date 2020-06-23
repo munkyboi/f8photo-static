@@ -1,0 +1,112 @@
+.topnav {
+    background-color: $darkgray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 0.5rem;
+
+    // .topnav-list
+    &-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 0.8rem;
+        @include flex(flex-end, center);
+
+        @media #{$responsive-phone} {
+            @include flex(center, center);
+            flex-wrap: wrap;
+        }
+
+        // .topnav-list-item
+        &-item {
+            display: block;
+            margin: 0;
+            padding: 0 1rem;
+            position: relative;
+
+            &:not(:last-of-type) {
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 1px;
+                    height: 40%;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            @media #{$responsive-phone} {
+                width: 50%;
+                &:not(:last-of-type) {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // .topnav-link
+    &-link {
+        @include flex(flex-start, center);
+        text-decoration: none !important;
+        color: $white;
+        padding: 0.5rem 0;
+
+        span {
+            @include flex(center, center);
+            background-color: $primary-color;
+            margin-left: 0.25rem;
+            padding: 0.35rem 0.35rem;
+            font-size: 0.8rem;
+            height: 1rem;
+            line-height: 0;
+            border-radius: 0.25rem;
+        }
+
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: rgba($white, 1);
+            bottom: 0;
+            left: 0;
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+
+            @media #{$responsive-phone} {
+                height: 100%;
+                background-color: rgba($white, 0.2);
+                transform: scaleY(1);
+                opacity: 0;
+            }
+        }
+
+        &:hover, &.active {
+            color: $white;
+            &:before {
+                transform: scaleY(1);
+
+                
+                @media #{$responsive-phone} {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        @media #{$responsive-phone} {
+            @include flex(center, center);
+            padding: 0.5rem;
+        }
+    }
+}

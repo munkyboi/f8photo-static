@@ -1,0 +1,19 @@
+.header {
+    padding: 2rem 0;
+    @media #{$responsive-laptop} {
+        .branding-col,
+        .search-col,
+        .cart-col {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
+
+
+@import "branding";
+@import "search";
+@import "cart";
+@import "mainmenu";
+@import "brandslider";
+@import "banners";

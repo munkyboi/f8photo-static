@@ -1,0 +1,247 @@
+.grid {
+    // .grid-header
+    &-header {
+    }
+
+    // .grid-content
+    &-body {
+
+    }
+
+    // .grid-filter
+    &-filter {
+        @include flex(flex-start, center);
+        background-color: rgba($lightgray, 0.5);
+        padding: 1rem;
+
+        @media #{$responsive-tablet} {
+            @include flex(center, flex-start);
+            flex-direction: column;
+        }
+
+        // .grid-filter-section
+        &-section {
+            @include flex(flex-start, center);
+            flex-grow: 1;
+
+            @media #{$responsive-tablet} {
+                flex-grow: 0;
+            }
+
+            &:nth-of-type(1) {
+                @media #{$responsive-tablet} {
+                    @include flex(center, flex-start);
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+
+            &:nth-of-type(2) {
+                justify-content: flex-end;
+                @media #{$responsive-tablet} {
+                    padding-top: 1rem;
+                    margin-top: 1rem;
+                    border-top: 1px solid $lightgray;
+                    width: 100%;
+                }
+            }
+        }
+
+        // .grid-filter-sort
+        &-sort {
+            @include flex(flex-start, center);
+
+            @media #{$responsive-tablet} {
+                width: 100%;
+            }
+
+            .label {
+                @media #{$responsive-tablet} {
+                    font-size: 0.8rem;
+                    width: 50px;
+                }
+            }
+            .form-group {
+                margin: 0;
+                margin-left: 1rem;
+                @media #{$responsive-tablet} {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        // .grid-filter-show
+        &-show {
+            @include flex(flex-start, center);
+            margin-left: 1rem;
+
+            @media #{$responsive-tablet} {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .label {
+                @media #{$responsive-tablet} {
+                    font-size: 0.8rem;
+                    width: 50px;
+                }
+            }
+            .form-group {
+                margin: 0;
+                margin-left: 1rem;
+                @media #{$responsive-tablet} {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        // .grid-filter-compare
+        &-compare {
+        }
+
+        // .grid-filter-view
+        &-view {
+            @include flex(center, center);
+            margin-left: 1rem;
+            a {
+                @include flex(center, center);
+                color: $gray;
+                width: 2rem;
+                height: 2rem;
+
+                i {
+                    font-size: 2rem;
+                    line-height: 1;
+                }
+
+                &:hover {
+                    background-color: $lightgray;
+                }
+                &.active {
+                    color: $primary-color;
+                    &:hover {
+                        background-color: $lightgray;
+                    }
+                }
+            }
+        }
+    }
+
+    // .grid-content
+    &-content {
+        // @include flex(flex-start);
+        // flex-wrap: wrap;
+        // flex-direction: row;
+        // position: relative;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-gap: 30px;
+    }
+
+    // .grid-item
+    &-item {
+        // padding: 1rem;
+
+        // .grid-item-wrapper
+        &-wrapper {
+            padding: 1rem;
+        }
+
+        // .grid-item-media
+        &-media {
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 240px;
+                object-fit: contain;
+            }
+            margin-bottom: 1rem;
+        }
+
+        // .grid-item-context
+        &-context {
+            font-size: 1rem;
+            a {
+                @include flex(center, center);
+                padding: 1rem;
+                background-color: rgba($lightgray, 0.25);
+                border-radius: 0.5rem;
+
+                color: $text-color;
+                text-align: center;
+                h3 {
+                    font-size: 1rem;
+                    margin: 0;
+                }
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    // .grid-pagination
+    &-pagination {
+        @include flex(center, center);
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+
+        ul {
+            @include flex(center, center);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                @include flex(center, center);
+                margin: 0 0.1rem;
+
+                a {
+                    @include flex(center, center);
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    line-height: 1;
+                    border: 1px solid $primary-color;
+                    font-weight: bold;
+                    transition: color 0.15s ease-out, background-color 0.15s ease-out;
+                    border-radius: 0.25rem;
+
+                    &.active {
+                        background-color: $primary-color;
+                        color: $white;
+                    }
+
+                    &:hover {
+                        background-color: $lightgray;
+                        color: $text-color;
+                    }
+
+                    &.next, &.prev {
+                        border: none;
+                    }
+                }
+
+                i {
+                    font-size: 2.5rem;
+                    line-height: 1;
+                }
+                span {
+                    @include flex(center, center);
+                    height: 2.5rem;
+                    line-height: 1;
+                    font-size: 1.25rem;
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+    // MODIFIERS
+
+    &.view-list {
+        .grid-content {
+            grid-template-columns: 100%;
+        }
+    }
+}

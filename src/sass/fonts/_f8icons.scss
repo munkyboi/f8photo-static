@@ -1,0 +1,109 @@
+$fontName: "f8photo";
+$path: '../fonts/f8photo';
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: $fontName;
+  src:url("#{$path}/f8photo.eot");
+  src:url("#{$path}/f8photo.eot?#iefix") format("embedded-opentype"),
+    url("#{$path}/f8photo.woff") format("woff"),
+    url("#{$path}/f8photo.ttf") format("truetype"),
+    url("#{$path}/f8photo.svg#f8photo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: $fontName !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="f8-"]:before,
+[class*=" f8-"]:before {
+  font-family: $fontName !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.f8-album:before {
+  content: "\61";
+}
+.f8-bags:before {
+  content: "\62";
+}
+.f8-battery:before {
+  content: "\63";
+}
+.f8-camera:before {
+  content: "\64";
+}
+.f8-drone:before {
+  content: "\65";
+}
+.f8-film:before {
+  content: "\66";
+}
+.f8-lens:before {
+  content: "\67";
+}
+.f8-lighting:before {
+  content: "\68";
+}
+.f8-printer:before {
+  content: "\69";
+}
+.f8-tripod:before {
+  content: "\6a";
+}
+.f8-underwatercamera:before {
+  content: "\6b";
+}
+.f8-sort-asc:before {
+  content: "\6c";
+}
+.f8-sort-desc:before {
+  content: "\6d";
+}
+.f8-sort:before {
+  content: "\6e";
+}
+.f8-plus:before {
+  content: "\6f";
+}
+.f8-minus:before {
+  content: "\70";
+}
+.f8-minus-square-o:before {
+  content: "\71";
+}
+.f8-plus-square-o:before {
+  content: "\72";
+}
+.f8-minus-square:before {
+  content: "\73";
+}
+.f8-plus-square:before {
+  content: "\74";
+}
+.f8-minus-circle:before {
+  content: "\75";
+}
+.f8-plus-circle:before {
+  content: "\76";
+}

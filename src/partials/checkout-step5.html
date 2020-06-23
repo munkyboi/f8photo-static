@@ -1,0 +1,52 @@
+
+        <div class="card">
+            <div class="card-header" id="paymentMethodHeading">
+                <h2 class="mb-0">
+                    <button class="btn processing" type="button" data-toggle="collapse" data-target="#step5" aria-expanded="false" aria-controls="step5">
+                        <i class="m-icon">arrow_forward</i>
+                        <span>STEP 5: Payment Method</span>
+                        <span class="spinner"></span>
+                    </button>
+                </h2>
+            </div>
+            <div id="step5" class="collapse multi-collapse" aria-labelledby="paymentMethodHeading" data-parent="#checkoutSteps">
+                <div class="card-body">
+                    <p>Please select the preferred shipping method to use on this order.</p>
+                    <div class="subcontainer">
+                        <div class="subcontainer-card full">
+                            <div class="col-md-12">
+                                <div class="form-group custom-control custom-radio">
+                                    <input type="radio" id="paymentMethodPaypal" name="paymentMethod" value="paypal" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="paymentMethodPaypal">Credit Card through Paypal Express Checkout </label>
+                                </div>
+                                <div class="form-group custom-control custom-radio">
+                                    <input type="radio" id="paymentMethodBank" name="paymentMethod" value="bankdeposit" class="custom-control-input">
+                                    <label class="custom-control-label" for="paymentMethodBank">Bank Deposit</label>
+                                </div>
+                                <div class="form-group custom-control custom-radio">
+                                    <input type="radio" id="paymentMethodRemittance" name="paymentMethod" value="moneyremittance" class="custom-control-input">
+                                    <label class="custom-control-label" for="paymentMethodRemittance">Money Remittance</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-2 col-md-3 text-right">
+                                        <label for="paymentMethodComment">Add Comments About Your Order</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-9">
+                                        <textarea type="text" class="form-control" name="paymentMethodComment" id="paymentMethodComment" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-action inline-revesed border-top">
+                                    <div class="form-group form-check reversed">
+                                        <label class="form-check-label" for="detailsReadPolicy">I have read and agree to the <a href="terms.html">Terms &amp; Conditions</a></label>
+                                        <input type="checkbox" name="detailsReadPolicy" class="form-check-input" id="detailsReadPolicy" required>
+                                    </div>
+                                    <button type="button" class="btn btn-primary">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

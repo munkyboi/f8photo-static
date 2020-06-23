@@ -1,0 +1,21 @@
+.hero-slider {
+    margin-bottom: 2rem;
+    .container {
+        padding-left: calc(300px + 15px);
+
+        @media #{$responsive-tablet} {
+            padding-left: 15px;
+        }
+
+        @media #{$responsive-phone} {
+            padding-left: 15px;
+        }
+    }
+    .slider {
+        padding: 1rem;
+        @media #{$responsive-phone} {
+            padding: 1rem 0;
+            padding-top: 2rem;
+        }
+    }
+}

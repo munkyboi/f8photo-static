@@ -1,0 +1,194 @@
+.datagrid {
+    position: relative;
+
+    table {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        thead {
+            tr {
+                border-bottom: 2px solid $lightgray;
+                th {
+                    padding: 0.5rem 0;
+                }
+            }
+
+            @media #{$responsive-phone} {
+                display: none;
+            }
+        }
+
+        tr {
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $lightgray;
+            }
+
+            &:hover {
+                td {
+                    background-color: rgba($lightgray, 0.5);
+                }
+            }
+
+            @media #{$responsive-phone} {
+                display: block;
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            &.clean {
+                border-bottom: none;
+            }
+
+            &.border-bottom {
+                border-bottom: 1px solid $lightgray;
+            }
+        }
+
+        td {
+            padding: 0.25rem 0;
+            margin: 0;
+            transition: background-color 0.15s ease-out;
+            background-color: rgba($lightgray, 0);
+
+            @media #{$responsive-phone} {
+                display: block;
+                width: 100%;
+                text-align: center !important;
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    &.clean {
+        table {
+            tr {
+                border-bottom: none;
+                td {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    // .datagrid-col
+    &-col {
+        span {
+            display: block;
+            padding: 0 0.5rem;
+        }
+
+        a {
+            display: inline-block;
+            color: $text-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        // .datagrid-col-thumb
+        &-thumb {
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+
+                @media #{$responsive-phone} {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+
+        // .datagrid-col-action
+        &-action {
+            text-align: right;
+            @media #{$responsive-phone} {
+                text-align: center;
+                width: 100%;
+                span {
+                    @include flex(center, center);
+                    text-align: center;
+                    width: auto;
+                }
+            }
+
+            a, .btn {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+                @include flex(center, center);
+                width: 1.24rem;
+                height: 1.24rem;
+                padding: 0;
+                margin: 0;
+                color: $text-color;
+                border-radius: 50%;
+
+                @media #{$responsive-phone} {
+                    width: 2.3rem;
+                    height: 2.3rem;
+                }
+    
+                i, .m-icon {
+                    font-size: 1rem;
+                    color: $text-color;
+                    @media #{$responsive-phone} {
+                        font-size: 2rem;
+                    }
+                }
+                
+                &.btn-danger {
+                    background-color: rgba($danger, 1);
+                    i, .m-icon {
+                        color: $white;
+                    }
+                    &:hover {
+                        background-color: darken($danger, 15%) !important;
+                    }
+                }
+                
+                &.btn-success {
+                    background-color: rgba($success, 1);
+                    i, .m-icon {
+                        color: $white;
+                    }
+                    &:hover {
+                        background-color: darken($success, 15%) !important;
+                    }
+                }
+                
+                &.btn-warning {
+                    background-color: rgba($warning, 1);
+                    i, .m-icon {
+                        color: $white;
+                    }
+                    &:hover {
+                        background-color: darken($warning, 15%) !important;
+                    }
+                }
+                
+                &.btn-info {
+                    background-color: rgba($info, 1);
+                    i, .m-icon {
+                        color: $white;
+                    }
+                    &:hover {
+                        background-color: darken($info, 15%) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // .datagrid-action-group
+    &-action-group {
+        @include flex(flex-end, center);
+        padding-top: 1rem;
+    }
+
+    // .datagrid-total
+    &-total {
+        font-size: 1.25rem;
+    }
+}

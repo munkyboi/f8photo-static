@@ -1,0 +1,91 @@
+.newproducts {
+    margin-bottom: 2rem;
+
+    // .newproducts-title
+    &-header {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $lightgray;
+        @include flex(flex-start, center);
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            flex-grow: 1;
+            margin: 0;
+        }
+    }
+
+    // .newproducts-body
+    &-body {
+
+        .slider {
+            .slick-slide {
+                > div {
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $lightgray;
+                    }
+                }
+            }
+            .slick-arrow {
+                top: -32px !important;
+                opacity: 1 !important;
+                background-color: transparent !important;
+                width: 20px !important;
+                &:before {
+                    color: rgba($text-color, 0.5) !important;
+                }
+                &:hover {
+                    &:before {
+                        color: rgba($text-color, 1) !important;
+                    }
+                }
+            }
+            .slick-next {
+                right: 1rem !important;
+            }
+            .slick-prev {
+                left: auto !important;
+                right: calc(1rem + 24px) !important;
+            }
+            .slick-dots {
+                padding: 0 10%;
+            }
+        }
+    }
+
+    .newproducts-group {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .product-item {
+        padding: 0.5rem;
+        .media {
+            @include flex(flex-start, center);
+        }
+
+        img {
+            width: 100%;
+            max-width: 80px;
+            height: auto;
+        }
+
+        h5 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}

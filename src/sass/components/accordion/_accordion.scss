@@ -1,0 +1,89 @@
+.accordion {
+    .card {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border: none !important;
+        border-radius: 0 !important;
+
+        // .card-header
+        &-header {
+            padding: 0;
+            margin: 0 !important;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $lightgray !important;
+            .btn {
+                width: 100%;
+                outline: none;
+                box-shadow: none;
+                padding: 1rem 0;
+                font-weight: bold;
+
+                @media #{$responsive-phone} {
+                    @include flex(flex-start, center);
+                    span:first-of-type {
+                        text-align: left;
+                        @include ellipsis();
+                    }
+                }
+
+                i {
+                    font-size: 1.25rem;
+                    color: $primary-color;
+                    transition: transform 0.15s ease-out;
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &[aria-expanded="true"] {
+                    color: $primary-color;
+                    i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        // .card-body
+        &-body {
+            background-color: rgba($lightgray, 0.25);
+            .input-group {
+                width: auto;
+            }
+        }
+    }
+
+    [ data-toggle="collapse"] {
+        position: relative;
+
+        .spinner {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: 2px solid $primary-color;
+            border-left-color: transparent;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            margin: 0;
+            margin-left: 1rem;
+            display: none;
+        }
+
+        &.processing {
+            .spinner {
+                display: flex;
+            }
+        }
+
+        &[aria-expanded="true"] {
+            .spinner {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+<div class="grid grid-product view-list">
+    <div class="grid-header">
+        <h3>Search - Fujifilm X-T2</h3>
+    </div>
+    
+    <div class="searchcriteria">
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Search Criteria</h5>
+            </div>
+        </div>
+        <div class="row flex-vstretch">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <partial src="category-dropdown.html"></partial>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="searchsubcategories" class="form-check-input" id="searchsubcategoriescheck">
+                    <label class="form-check-label" for="searchsubcategoriescheck">Search in subcategories</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="searchdescription" class="form-check-input" id="searchdescriptioncheck">
+                    <label class="form-check-label" for="searchdescriptioncheck">Search in product description</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group actions">
+                    <button type="submit" class="btn btn-lg btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-body">
+
+        <div class="grid-filter">
+            <div class="grid-filter-section">
+                <div class="grid-filter-sort">
+                    <div class="label">Sort By:</div>
+                    <div class="form-group">
+                        <select class="form-control" id="filterSort">
+                            <option value="default" selected="selected">Default</option>
+                            <option value="asc">Name (A - Z)</option>
+                            <option value="desc">Name (Z - A)</option>
+                            <option value="price-asc">Price (Low &gt; High)</option>
+                            <option value="price-desc">Price (High &gt; Low)</option>
+                            <option value="rating-desc">Rating (Highest)</option>
+                            <option value="rating-asc">Rating (Lowest)</option>
+                            <option value="model-asc">Model (A - Z)</option>
+                            <option value="model-desc">Model (Z - A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-filter-show">
+                    <div class="label">Show:</div>
+                    <div class="form-group">
+                        <select class="form-control" id="filterShow">
+                            <option value="15" selected="selected">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-filter-section">
+                <div class="grid-filter-compare">
+                    <a href="compare.html">Product Compare (2)</a>
+                </div>
+                <div class="grid-filter-view">
+                    <a href="#grid" class="view-grid" title="Grid View">
+                        <i class="m-icon">view_module</i>
+                    </a>
+                    <a href="#list" class="view-list active" title="List View">
+                        <i class="m-icon">view_list</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-content">
+            <!-- AJAX CONTENT -->
+        </div>
+    </div>
+
+    <partial src='pagination.html'></partial>
+</div>

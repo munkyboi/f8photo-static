@@ -1,0 +1,29 @@
+.banners {
+    margin-bottom: 2rem;
+}
+
+.banner {
+    
+    // .banner-link
+    &-link {
+        display: block;
+        position: relative;
+
+        @media #{$responsive-phone} {
+            margin: 1rem 0;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+
+            transition: opacity 0.15s ease-out;
+        }
+
+        &:hover {
+            img {
+                opacity: 0.75;
+            }
+        }
+    }
+}

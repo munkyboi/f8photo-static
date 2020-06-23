@@ -1,0 +1,36 @@
+.popup {
+    
+    // .popup-wrapper
+    &-wrapper {
+        background-color: $color-body;
+        border: 1px solid $lightgray;
+        padding: 1rem;
+
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border-top: 4px solid $primary-color;
+    }
+
+    // .popup-header
+    &-header {
+    }
+
+    // .popup-body
+    &-body {
+        max-height: 180px;
+        overflow-y: auto;
+        @include applyScrollbar;
+    }
+
+    // .popup-actions
+    &-actions {
+        padding: 1rem 0 0 0;
+        border-top: 1px solid $lightgray;
+        
+        a, .btn {
+            &:not(:first-of-type) {
+                margin: 0;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

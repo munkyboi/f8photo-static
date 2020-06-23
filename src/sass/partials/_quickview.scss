@@ -1,0 +1,245 @@
+.quickview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 310;
+    opacity: 0;
+    pointer-events: none;
+
+    // .quickview-wrapper
+    &-wrapper {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    // .quickview-controls
+    &-controls {
+        a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            @include flex(center, center);
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba($black, 0.25);
+            color: $white;
+            transition: background-color 0.15s ease-out;
+            text-decoration: none;
+            outline: none;
+            z-index: 3;
+
+            &:hover {
+                background-color: rgba($primary-color, 1);
+            }
+
+            @media #{$responsive-phone} {
+                top: 0px;
+                transform: translateY(0);
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        .quickview-next {
+            right: 1rem;
+            @media #{$responsive-phone} {
+                right: auto;
+                left: 4.25rem;
+            }
+        }
+        .quickview-prev {
+            left: 1rem;
+            @media #{$responsive-phone} {
+                left: 0;
+            }
+        }
+    
+        .quickview-close {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            transform: translateY(0);
+            @include flex(center, center);
+            width: 4rem;
+            height: 4rem;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+            border-bottom-left-radius: 50%;
+            background-color: $danger;
+            color: $white !important;
+            outline: none !important;
+            box-shadow: none !important;
+            text-decoration: none !important;
+            transition: background-color 0.15s ease-out;
+    
+            i {
+                font-size: 2rem;
+                line-height: 1;
+                padding-left: 0.5rem;
+                padding-bottom: 0.25rem;
+            }
+    
+            &:hover {
+                background-color: darken($danger, 10%);
+            }
+        }
+    }
+
+    // .quickview-transition
+    &-transition {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    // .quickview-content
+    &-content {
+        z-index: 2;
+        background-color: $color-body;
+        width: 100%;
+        max-width: 960px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 400px;
+
+        box-shadow: 0px 5px 10px rgba($black, 0.5);
+
+        opacity: 0;
+
+        transition: all 0.15s ease-out;
+
+        @include applyScrollbar();
+        position: absolute;
+
+        @media #{$responsive-desktop} {
+            max-width: 960px;
+            min-height: 400px;
+        }
+        @media #{$responsive-laptop} {
+            max-width: 800px;
+            min-height: 400px;
+        }
+
+        @media #{$responsive-tablet} {
+            max-width: 700px;
+            min-height: 400px;
+            max-height: 420px;
+        }
+
+        @media #{$responsive-phone} {
+            top: 0;
+            transform: translate(0, 0);
+            left: 0;
+            right: 0;
+            width: auto;
+            bottom: 0;
+            max-width: none;
+            min-height: auto;
+            max-height: none;
+        }
+
+        // .quickview-content-wrapper
+        &-wrapper {
+            padding: 1rem;
+        }
+    }
+
+    // .quickview-overlay
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($black, 0.5);
+        z-index: 1;
+    }
+    
+
+    .preload {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        opacity: 0;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: $white;
+        box-shadow: 0px 5px 10px rgba($black, 0);
+        @include flex(center, center);
+        transform-origin: center center;
+
+        transition: all 0.15s ease-out 0s;
+    }
+
+
+    // EVENTS
+    &.show {
+        pointer-events: all;
+        animation: animation-quickview-start 0.15s ease-out 1 both;
+
+        .quickview-overlay {
+        }
+
+        .quickview-content {
+            animation: animation-quickview-content-start 0.15s ease-out 1 both 0.15s;
+            @media #{$responsive-phone} {
+                animation: animation-quickview-content-start-mobile 0.15s ease-out 1 both 0.15s;
+            }
+        }
+    }
+
+    &.loading {
+        .preload {
+            opacity: 1;
+            width: 3rem;
+            height: 3rem;
+            box-shadow: 0px 5px 10px rgba($black, 0.25);
+            transition: all 0.15s ease-out 0.15s;
+        }
+    }
+}
+
+@keyframes animation-quickview-start {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation-quickview-content-start {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 4rem));
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes animation-quickview-content-start-mobile {
+    0% {
+        opacity: 0;
+        transform: translate(0, -4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

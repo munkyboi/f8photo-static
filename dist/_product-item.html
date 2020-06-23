@@ -1,0 +1,49 @@
+<div class="product-item {?itemType?}">
+    <div class="product-data">
+        <input type="hidden" class="product-data-id" name="product-data-id" value="{?id?}"
+        />
+        <input type="hidden" class="product-data-name" name="product-data-name"
+        value="{?name?}" />
+        <input type="hidden" class="product-data-price" name="product-data-price"
+        value="{?price?}" />
+    </div>
+    <div class="product-item-wrapper">
+        <div class="product-item-image"> <a href="product.html?prodid={?id?}" class="product-item-image-link" title="{?name?}">
+
+                <img src="{?imagePreview?}" alt="{?name?}">
+
+            </a> <a href="#quickview" class="btn quickview-button" data-prodid="2">Quick View</a>
+        </div>
+        <div class="product-item-context"> <a href="product.html?prodid={?id?}" class="product-item-name" title="{?name?}">
+
+                {?name?}
+
+            </a>
+            <div class="product-item-rating">
+                <div class="star-rating" title="{?rating?}"> <span style="width: {?ratingPercent?}%"></span>
+                </div>
+            </div>
+            <div class="product-item-price">{?price?}</div>
+        </div>
+        <div class="product-item-actions"> <a href="#add-to-cart" class="btn btn-primary add-to-cart-button">
+
+                <i class="m-icon">shopping_cart</i>
+
+                <span>Add to Cart</span>
+
+            </a> <a href="#add-to-wishlist" class="btn add-to-wishlist-button">
+
+                <i class="m-icon">favorite_border</i>
+
+                <span>Add to Wish List</span>
+
+            </a> <a href="#add-to-wishlist" class="btn compare-button">
+
+                <i class="m-icon">compare_arrows</i>
+
+                <span>Compare Product</span>
+
+            </a>
+        </div>
+    </div>
+</div>

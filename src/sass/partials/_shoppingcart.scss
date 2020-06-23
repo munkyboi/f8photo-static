@@ -1,0 +1,36 @@
+.shoppingcartExtras {
+}
+
+#shippingtax {
+}
+
+.shoppingtotal {
+    @include flex(flex-end, flex-start);
+    padding: 0 1rem;
+}
+
+.shoppingcartActions {
+    padding: 1rem;
+    background-color: rgba($lightgray, 0.25);
+    @include flex(flex-end, center);
+    border-top: 1px solid $lightgray;
+
+    .btn {
+        &:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+    }
+
+    @media #{$responsive-phone} {
+        display: block;
+
+        .btn {
+            width: 100%;
+            margin: 0;
+            @include flex(center, center);
+            &:not(:last-of-type) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

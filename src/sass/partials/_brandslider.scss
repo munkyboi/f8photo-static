@@ -1,0 +1,15 @@
+.brands-slider {
+    background-color: rgba($lightgray, 0.5);
+    margin-bottom: 2rem;
+    .slider-slide {
+        padding: 1rem 2rem;
+
+        @media #{$responsive-phone} {
+            @include flex(center, center);
+            img {
+                width: 100%;
+                max-width: 160px;
+            }
+        }
+    }
+}

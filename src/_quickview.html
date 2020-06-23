@@ -1,0 +1,59 @@
+<div class="row productview-container productview-item">
+    <div class="product-data">
+        <input type="hidden" class="product-data-id" name="product-data-id" value="{?id?}" />
+        <input type="hidden" class="product-data-name" name="product-data-name" value="{?name?}" />
+        <input type="hidden" class="product-data-price" name="product-data-price" value="{?price?}" />
+    </div>
+    <div class="col-md-6 productview-media">
+        {?productStatus?}
+        <div class="productview-image">
+            <img src="{?image?}" alt="">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="productview-details">
+            <div class="productview-name">
+                <h1 class="product-name">{?name?}</h1>
+            </div>
+            <div class="productview-make">
+                <p>Brand: <a href="brand.html">{?brand?}</a></p>
+                <p>Product Code: {?code?}</p>
+                <p>Availability: {?availability?}</p>
+            </div>
+            <div class="productview-price">
+                <h3>{?price?}</h3>
+            </div>
+            {?generateOptions?}
+            <div class="productview-actions">
+                <div class="cartbox-quantity">
+                    <div class="cartbox-quantity-label">Qty</div>
+                    <div class="cartbox-quantity-spinner">
+                        <input class="input-spinner" type="number" value="1" min="1" max="99" step="1"/>
+                    </div>
+                    <a href="#add-to-cart" class="btn btn-primary add-to-cart-button cartbox-btn-add">Add to Cart</a>
+                </div>
+                <div class="cartbox-extra">
+                    <a href="#add-to-wishlist" class="add-to-wishlist-button cartbox-btn-wishlist">
+                        <i class="m-icon">favorite_border</i>
+                        <span>Add to Wish List</span>
+                    </a>
+                    <a href="#add-to-wishlist" class=" cartbox-btn-compare">
+                        <i class="m-icon">compare_arrows</i>
+                        <span>Compare This Product</span>
+                    </a>
+                </div>
+            </div>
+            <div class="productview-reviews">
+                <div class="product-slider-item-rating">
+                    <div class="star-rating" title="{?rating?}">
+                        <span style="width: {?ratingPercent?}%"></span>
+                    </div>
+                </div>
+                <div class="productview-reviews-link">
+                    <a href="./product.html?prodid={?id?}&scrollto=readreview">{?reviews?} reviews</a>
+                    <a href="./product.html?prodid={?id?}&scrollto=writereview">Write a review</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

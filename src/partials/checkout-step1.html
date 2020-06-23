@@ -1,0 +1,79 @@
+
+        <div class="card">
+            <div class="card-header" id="checkoutOptionsHeading">
+                <h2 class="mb-0">
+                    <button class="btn " type="button" data-toggle="collapse" data-target="#step1" aria-expanded="true" aria-controls="step1">
+                        <i class="m-icon">arrow_forward</i>
+                        <span>STEP 1: Checkout Options</span>
+                        <span class="spinner"></span>
+                    </button>
+                </h2>
+            </div>
+            <div id="step1" class="collapse multi-collapse show" aria-labelledby="checkoutOptionsHeading" data-parent="#checkoutSteps">
+                <div class="card-body">
+                    <div class="form-group form-check border-bottom">
+                        <input type="checkbox" name="pickupStore" class="form-check-input" id="pickupStore">
+                        <label class="form-check-label" for="pickupStore">Pickup from store</label>
+                    </div>
+
+                    <div class="subcontainer">
+                        <div class="subcontainer-card">
+                            <div class="col-md-12">
+                                <div class="subcontainer-card-title">
+                                    <h4>New Customer</h4>
+                                    <p>Checkout Options:</p>
+                                </div>
+                                <div class="form-group custom-control custom-radio">
+                                    <input type="radio" id="registerAccount" name="register" value="new" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="registerAccount">Register Account</label>
+                                </div>
+                                <div class="form-group custom-control custom-radio">
+                                    <input type="radio" id="guestCheckout" name="register" value="guest" class="custom-control-input">
+                                    <label class="custom-control-label" for="guestCheckout">Guest Checkout</label>
+                                </div>
+                                <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+                                <div class="form-action border-top">
+                                    <button type="button" class="btn btn-primary btn-right">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subcontainer-card">
+                            <div class="col-md-12">
+                                <div class="subcontainer-card-title">
+                                    <h4>Returning Customer</h4>
+                                    <p>I am a returning customer</p>
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <div class="col-lg-4 col-md-3 col-sm-12 text-right">
+                                    <label for="loginEmail">Email</label>
+                                </div>
+                                <div class="col-lg-8 col-md-9 col-sm-12">
+                                    <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="name@domain.com">
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <div class="col-lg-4 col-md-3 col-sm-12 text-right">
+                                    <label for="loginPassword">Password</label>
+                                </div>
+                                <div class="col-lg-8 col-md-9 col-sm-12">
+                                    <input type="password" class="form-control" name="loginPassword" id="loginPassword">
+                                </div>
+                            </div>
+                            <div class="forgotPassword">
+                                <a href="forgotpassword.html">I forgot my password</a>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-action border-top">
+                                    <button type="button" class="btn btn-primary btn-right">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,252 @@
+.reviews {
+
+    .no-match {
+        padding: 0 2rem;
+        text-align: center;
+        font-style: italic;
+        color: $gray;
+        margin-bottom: 2rem;
+    }
+
+    // .reviews-item
+    &-item {
+
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $lightgray;
+        }
+
+        color: $text-color;
+
+        .media {
+            img {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                overflow: hidden;
+            }
+        }
+
+        // .reviews-item-rating
+        &-rating {
+            @include flex(flex-start, center);
+
+            @media #{$responsive-phone} {
+                @include flex(flex-start, flex-start);
+                flex-direction: column;
+            }
+
+            .star-rating {
+                @media #{$responsive-phone} {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .reviewer-name {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+                line-height: 1.4;
+                padding-top: 0.25rem;
+                font-weight: bold;
+                color: lighten($text-color, 20%);
+
+                @media #{$responsive-phone} {
+                    margin-left: 0;
+                }
+            }
+
+            .reviewer-verified {
+                margin-left: 1rem;
+                padding-left: 1rem;
+                font-size: 0.85rem;
+                line-height: 1.4;
+                padding-top: 0.25rem;
+                position: relative;
+                text-transform: uppercase;
+
+                @media #{$responsive-phone} {
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 1px;
+                    height: 80%;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    background-color: $lightgray;
+
+                    @media #{$responsive-phone} {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // .reviews-form
+    &-form {
+        .form-group {
+            padding: 1rem;
+
+            &.rating {
+                @include flex(flex-start, center);
+                background-color: rgba($lightgray, 0.25);
+                label {
+                    margin: 0;
+                    margin-right: 1rem;
+                }
+            }
+
+            &.actions {
+                border-top: 1px solid $lightgray;
+                @include flex(flex-end, center);
+            }
+        }
+    }
+
+    // .reviews-header
+    &-header {
+        @include flex(flex-start, center);
+        background-color: rgba($lightgray, 0.25);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        min-height: 62px;
+
+        @media #{$responsive-phone} {
+            @include flex(flex-start, center);
+            flex-direction: column;
+        }
+
+        .nav {
+            padding: 0 !important;
+            margin: 0 !important;
+            flex-grow: 1;
+            
+            @media #{$responsive-phone} {
+                margin-bottom: 1rem !important;
+                width: 100%;
+                @include flex(center, center);
+            }
+    
+            .nav-item {
+                &:not(:first-of-type) {
+                    margin-left: 1rem;
+                }
+                @media #{$responsive-phone} {
+                    flex-grow: 1;
+                    &:not(:first-of-type) {
+                        margin-left: 0;
+                    }
+                }
+            }
+    
+            .nav-link {
+                border: 1px solid $lightgray;
+                @include flex(flex-start, center);
+                color: $text-color;
+    
+                &:hover {
+                    border-color: darken($lightgray, 10%);
+                }
+    
+                &.active {
+                    border: 1px solid $primary-color;
+                    background-color: $primary-color;
+                    color: $white;
+    
+                    &:hover {
+                        background-color: darken($primary-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    // .reviews-filter
+    &-filter {
+        @include flex(flex-end, center);
+        position: relative;
+
+        display: none;
+
+        @media #{$responsive-phone} {
+            
+        }
+
+        // .reviews-filter-label
+        &-label {
+            @include flex(flex-start, center);
+            background-color: $white;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            border: 1px solid $lightgray;
+            cursor: pointer;
+            outline: none;
+            .label {
+                margin-right: 0.5rem;
+            }
+            .value {
+                background-color: $primary-color;
+                color: $white;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.25rem;
+            }
+            i {
+                margin-left: 0.5rem;
+                color: $gray;
+            }
+        }
+
+        // .reviews-filter-list
+        &-list {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: $white;
+            width: 100%;
+            @include flex(flex-start, stretch);
+            flex-direction: column;
+            border: 1px solid $lightgray;
+            border-top: none;
+            box-shadow: 0px 5px 10px rgba($black, 0.25);
+            display: none;
+            z-index: 2;
+        }
+
+        // .reviews-filter-item
+        &-item {
+            @include flex(center, center);
+            transition: background-color 0.15s ease-out;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($lightgray, 0.5);
+            }
+
+            &.active {
+                background-color: rgba($primary-color, 0.15);
+            }
+        }
+
+        &.open {
+            .reviews-filter-list {
+                display: flex;
+            }
+        }
+    }
+
+    // EVENTS
+
+    &.show-filter {
+        .reviews-filter {
+            display: flex;
+        }
+    }
+}

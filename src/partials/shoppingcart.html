@@ -1,0 +1,109 @@
+<div class="subsection">
+    <h3>Shopping Cart (0.00kg)</h3>
+</div>
+<div class="subsection">
+    <partial src="datagrid-shoppingcart.html"></partial>
+</div>
+<div class="subsection shoppingcartExtras">
+    <h4>What would you like to do next?</h4>
+    <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+    <div class="accordion" id="shoppingcartextras">
+        <div class="card">
+            <div class="card-header" id="shoppingcartHeading">
+                <h2 class="mb-0">
+                    <button class="btn " type="button" data-toggle="collapse" data-target="#couponcode" aria-expanded="false" aria-controls="couponcode">
+                        <i class="m-icon">arrow_forward</i>
+                        <span>Use Coupon Code</span>
+                    </button>
+                </h2>
+            </div>
+      
+            <div id="couponcode" class="collapse multi-collapse" aria-labelledby="shoppingcartHeading" data-parent="#shoppingcartextras">
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="couponcode-input">Enter Your Coupon Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="couponcode" id="couponcode-input" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="couponcode">
+                                <div class="input-group-append">
+                                <button class="btn btn-primary couponcode-button" type="button" id="couponcode-button">Apply Coupon</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="shippingtaxHeading">
+                <h2 class="mb-0">
+                    <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#shippingtax" aria-expanded="false" aria-controls="shippingtax">
+                        <i class="m-icon">arrow_forward</i>
+                        <span>Estimate Shipping &amp; Taxes</span>
+                    </button>
+                </h2>
+            </div>
+            <div id="shippingtax" class="collapse multi-collapse" aria-labelledby="shippingtaxHeading" data-parent="#shoppingcartextras">
+                <div class="card-body">
+                    <div class="form-group required">
+                        <div class="col-md-2 text-right">
+                            <label for="country_id">Country</label>
+                        </div>
+                        <div class="col-md-10">
+                            <partial src="country-dropdown.html"></partial>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <div class="col-md-2 text-right">
+                            <label for="zone_id">Region/State</label>
+                        </div>
+                        <div class="col-md-10">
+                            <partial src="region-dropdown.html"></partial>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 text-right">
+                            <label for="postalcode-input">Postal Code</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="postalcode" id="postalcode-input" placeholder="Postal Code" aria-label="Postal Code" aria-describedby="postalcode">
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary btn-right">
+                                Get Quotes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="subsection shoppingtotal">
+    <table class="datagrid datagrid-total">
+        <tbody>
+            <tr>
+                <td class="datagrid-col">
+                    <span class="align--right">Sub-Total:</span>
+                </td>
+                <td class="datagrid-col">
+                    <span>₱59,380</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="datagrid-col">
+                    <span class="text--bold align--right">Total:</span>
+                </td>
+                <td class="datagrid-col">
+                    <span class="text--bold">₱59,380</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="subsection shoppingcartActions">
+    <button type="button" class="btn btn-outline-primary">Continue Shopping</button>
+    <button type="button" class="btn btn-primary">Checkout</button>
+</div>
