@@ -1,0 +1,44 @@
+.comparison-table {
+  // border-top: 1px solid $lightgray;
+  // border-left: 1px solid $lightgray;
+  // border-right: 1px solid $lightgray;
+  color: $black;
+  caption {
+    display: table-caption;
+    caption-side: top;
+    padding: 1rem;
+    // border-top: 1px solid $lightgray;
+    // border-left: 1px solid $lightgray;
+    // border-right: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
+    background-color: $lightgray;
+    font-weight: bold;
+    color: $black;
+  }
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid $lightgray;
+
+    &.row-label {
+      min-width: 120px;
+
+      small {
+        display: block;
+        font-size: 0.7rem;
+        color: $gray;
+      }
+    }
+
+    &.button-group {
+      text-align: center;
+      .btn {
+        display: inline-block;
+      }
+    }
+
+    .review-count {
+      padding-top: 0.5rem;
+      font-size: 1rem;
+    }
+  }
+}
