@@ -215,11 +215,19 @@ $color-overlay: rgba(0,0,0,0.75);
 $color-body: #fff;
 
 
-$responsive-desktop: only screen and (min-width: 1440px) and (max-width:2560px);
-$responsive-laptop: only screen and (min-width: 1024px) and (max-width:1439px);
-$responsive-tablet: only screen and (min-device-width:425px) and (max-device-width:1023px), (min-width: 425px) and (max-width: 1023px);
-$responsive-tablet-portrait: only screen and (min-device-width:768px) and (max-device-width:1023px), (min-width: 768px) and (max-width: 1023px);
-$responsive-tablet-landscape: only screen and (min-device-width:768px) and (max-device-width:1023px), (min-width: 768px) and (max-width: 1023px);
-$responsive-phone: only screen and (min-device-width:320px) and (max-device-width:425px), (min-width:320px) and (max-width:425px);
-$responsive-phone-portrait: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
-$responsive-phone-landscape: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
+// $responsive-desktop: only screen and (min-width: 1440px) and (max-width:2560px);
+// $responsive-laptop: only screen and (min-width: 1024px) and (max-width:1439px);
+// $responsive-tablet: only screen and (min-device-width:425px) and (max-device-width:1023px), (min-width: 425px) and (max-width: 1023px);
+// $responsive-tablet-portrait: only screen and (min-device-width:768px) and (max-device-width:1023px), (min-width: 768px) and (max-width: 1023px);
+// $responsive-tablet-landscape: only screen and (min-device-width:768px) and (max-device-width:1023px), (min-width: 768px) and (max-width: 1023px);
+// $responsive-phone: only screen and (min-device-width:320px) and (max-device-width:425px), (min-width:320px) and (max-width:425px);
+// $responsive-phone-portrait: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
+// $responsive-phone-landscape: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
+
+$responsive-all: 'only screen and (max-width: 1024px)';
+$responsive-desktop: 'only screen and (min-width:1440px)';
+$responsive-laptop: 'only screen and (max-width:1440px)';
+$responsive-tablet: 'only screen and (min-device-width:768px) and (max-device-width:1024px), (min-width: 768px) and (max-width: 1024px)';
+$responsive-phone: 'only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px)';
+$responsive-portrait: 'and (orientation: portrait)';
+$responsive-landscape: 'and (orientation: landscape)';

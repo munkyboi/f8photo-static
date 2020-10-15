@@ -74,26 +74,24 @@
 
         // .sidebar-body
         &-body {
+            @include applyScrollbar;
             position: absolute;
             background-color: $color-body;
             width: 100%;
             z-index: 20;
+            overflow-y: auto;
+            max-height: calc(100vh - 440px);
 
-            @media #{$responsive-tablet} {
+            @media #{$responsive-all} {
                 height: auto;
-                max-height: 0;
-                overflow: hidden;
-                box-shadow: 0px 5px 10px rgba($black, 0.25);
+                max-height: 0 !important;
+                overflow: hidden !important;
+                position: relative;
                 transition: box-shadow 0.3s ease-out, max-height 0.3s ease-out;
             }
 
-            @media #{$responsive-phone} {
-                position: relative;
-                z-index: 1;
-                height: auto;
-                max-height: 0;
-                overflow: hidden;
-                transition: box-shadow 0.3s ease-out, max-height 0.3s ease-out;
+            @media #{$responsive-tablet} {
+                position: absolute;
             }
 
             ul {
@@ -201,15 +199,9 @@
                 }
             }
             .sidebar-body {
-                @media #{$responsive-tablet} {
+                @media #{$responsive-all} {
                     height: auto;
-                    max-height: calc(100vh - 148px) !important;
-                    overflow-y: auto !important;
-                }
-
-                @media #{$responsive-phone} {
-                    height: auto;
-                    max-height: calc(100vh - 148px) !important;
+                    max-height: unquote('min(calc(100vh - 200px), 600px)') !important;
                     overflow-y: auto !important;
                 }
             }
@@ -255,6 +247,7 @@
                     height: auto;
                     max-height: 600px;
                     box-shadow: 0px 5px 10px rgba($black, 0.25);
+                    overflow-y: auto !important;
                 }
             }
         }
@@ -421,6 +414,7 @@
                 @media #{$responsive-phone} {
                     height: auto;
                     max-height: 400px;
+                    overflow-y: auto !important;
                 }
             }
         }
@@ -482,6 +476,7 @@
                 transition: max-height 0.3s ease-out, box-shadow 0.3s ease-out 0s;
     
                 @media #{$responsive-tablet} {
+                    position: absolute;
                     height: auto;
                     max-height: 0;
                     overflow: hidden;
@@ -489,7 +484,7 @@
                 }
     
                 @media #{$responsive-phone} {
-                    position: relative;
+                    position: absolute;
                     z-index: 1;
                     height: auto;
                     max-height: 0;
@@ -502,6 +497,11 @@
                     height: auto;
                     max-height: 600px;
                     box-shadow: 0px 5px 10px rgba($black, 0.25);
+                    overflow-y: auto;
+
+                    @media #{$responsive-tablet} {
+                        max-height: unquote('min(calc(100vh - 200px), 600px)') !important;
+                    }
                 }
             }
         }

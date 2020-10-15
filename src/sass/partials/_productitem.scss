@@ -52,7 +52,7 @@
             flex-grow: 1;
             max-height: 220px;
             width: 100%;
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 max-height: 220px;
             }
 
@@ -87,7 +87,7 @@
                 width: 100% !important;
                 height: 220px !important;
                 object-fit: contain;
-                @media #{$responsive-phone} {
+                @media #{$responsive-all} {
                     height: 220px;
                 }
             }
@@ -102,6 +102,10 @@
                 justify-content: center;
 
                 transition: opacity 0.15s ease-out, background-color 0.15s ease-out;
+                
+                @media #{$responsive-all} {
+                    opacity: 1;
+                }
 
                 &:hover {
                     background-color: rgba($lightgray, 1);
@@ -146,7 +150,7 @@
                 color: $primary-color;
             }
 
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 width: 100%;
                 font-size: 1.5rem;
                 height: calc(1.5rem * 1.8 * 2);
@@ -157,7 +161,7 @@
         // .product-item-rating
         &-rating {
             margin-bottom: 0.5rem;
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 width: 100%;
                 @include flex(center, center);
             }
@@ -167,7 +171,7 @@
         &-price {
             font-size: 1.2rem;
             font-weight: bold;
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 font-size: 1.4rem;
                 width: 100%;
                 text-align: center;
@@ -189,9 +193,21 @@
             opacity: 0;
             box-shadow: 0px 5px 10px rgba($black, 0.5);
             transition: none;
+            
+            @media #{$responsive-all} {
+                opacity: 1;
+                box-shadow: none;
+                position: relative;
+            }
             .btn {
                 justify-content: center;
                 pointer-events: none;
+
+                @media #{$responsive-all} {
+                    > span {
+                        display: none;
+                    }
+                }
             }
             .add-to-cart-button {
                 flex-grow: 1;
@@ -222,9 +238,9 @@
             transform: scale(1.05);
             z-index: 100;
 
-            .product-item-wrapper {
-                // padding-bottom: 59px;
-            }
+            // .product-item-wrapper {
+            //     padding-bottom: 59px;
+            // }
 
             .product-item-image {
                 .quickview-button {
@@ -238,6 +254,10 @@
                 .btn {
                     pointer-events: all;
                 }
+            }
+            @media #{$responsive-all} {
+                box-shadow: none;
+                transform: none;
             }
         }
     }
@@ -262,11 +282,11 @@
         // .product-item-image
         &-image {
             max-width: 220px;
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 max-width: 80px;
             }
             img {
-                @media #{$responsive-phone} {
+                @media #{$responsive-all} {
                     max-width: 80px !important;
                     height: 80px !important;
                 }
@@ -320,10 +340,11 @@
                 display: none;
             }
 
-            @media #{$responsive-phone} {
+            @media #{$responsive-all} {
                 max-width: 5rem;
                 min-width: 5rem;
             }
+
             .btn {
                 width: 100%;
                 flex-grow: 0;
@@ -332,7 +353,7 @@
                 &:not(:last-of-type) {
                     margin-bottom: 0.25rem;
                 }
-                @media #{$responsive-phone} {
+                @media #{$responsive-all} {
                     i {
                         display: inline-block;
                     }
@@ -347,7 +368,7 @@
                 text-transform: none;
                 span {
                     display: inline-block;
-                    @media #{$responsive-phone} {
+                    @media #{$responsive-all} {
                         display: none;
                     }
                 }
