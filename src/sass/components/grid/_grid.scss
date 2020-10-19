@@ -14,7 +14,12 @@
         background-color: rgba($lightgray, 0.5);
         padding: 1rem;
 
-        @media #{$responsive-tablet} {
+        @media #{$responsive-tablet} #{responsive-portrait} {
+            @include flex(center, flex-start);
+            flex-direction: column;
+        }
+
+        @media #{$responsive-phone} {
             @include flex(center, flex-start);
             flex-direction: column;
         }
@@ -24,12 +29,12 @@
             @include flex(flex-start, center);
             flex-grow: 1;
 
-            @media #{$responsive-tablet} {
+            @media #{$responsive-phone} {
                 flex-grow: 0;
             }
 
             &:nth-of-type(1) {
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     @include flex(center, flex-start);
                     flex-direction: column;
                     width: 100%;
@@ -38,7 +43,7 @@
 
             &:nth-of-type(2) {
                 justify-content: flex-end;
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     padding-top: 1rem;
                     margin-top: 1rem;
                     border-top: 1px solid $lightgray;
@@ -51,12 +56,12 @@
         &-sort {
             @include flex(flex-start, center);
 
-            @media #{$responsive-tablet} {
+            @media #{$responsive-phone} {
                 width: 100%;
             }
 
             .label {
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     font-size: 0.8rem;
                     width: 50px;
                 }
@@ -64,7 +69,7 @@
             .form-group {
                 margin: 0;
                 margin-left: 1rem;
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     flex-grow: 1;
                 }
             }
@@ -75,13 +80,13 @@
             @include flex(flex-start, center);
             margin-left: 1rem;
 
-            @media #{$responsive-tablet} {
+            @media #{$responsive-phone} {
                 width: 100%;
                 margin-left: 0;
             }
 
             .label {
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     font-size: 0.8rem;
                     width: 50px;
                 }
@@ -89,7 +94,7 @@
             .form-group {
                 margin: 0;
                 margin-left: 1rem;
-                @media #{$responsive-tablet} {
+                @media #{$responsive-phone} {
                     flex-grow: 1;
                 }
             }
